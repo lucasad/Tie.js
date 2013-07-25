@@ -68,7 +68,7 @@ HTML
   </tbody>
 </table>
 ```
-  
+Javascript
 ```js
 var data = { activities:
              [ { date: '2011-08-23',
