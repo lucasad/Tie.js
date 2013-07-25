@@ -21,7 +21,7 @@
                 node.empty();
                 data.forEach(function (item) {
                     var instance = inner.clone();
-                    tie(instance, item);
+                    tie(instance, item, context);
                     node.append(instance);
                 });
                 inner.remove();
