@@ -3,18 +3,18 @@
  * Licensed under the EUPL V.1.1
  */
 
-(function () {
+(function (exports) {
     "use strict";
     var map = function (root, context) {
         for (var key in context) {
             var node = root.find('.' + key);
             var data = context[key];
-            tie(node, data);
+            tie(node, data, (typeof data==="object") ? data : context);
         }
     };
 
 
-    var tie = function (node, data) {
+    var tie = function (node, data, context) {
         switch (data.constructor) {
             case Array:
                 var inner = node.children();
@@ -27,10 +27,12 @@
                 inner.remove();
                 break;
             case Object:
-                map(node, data);
+                map.call(this, node, data);
                 break;
             case Function:
-                node.html(data());
+                data=data.call(context);
+                console.log(this)
+                node.html(data);
                 break;
             default:
                 node.html(data.toString());
@@ -40,5 +42,7 @@
                 break;
         }
     };
-    ((typeof module === "undefined") ? window : module.exports).tie=tie;
-})();
+    exports.tie = function (node, data) {
+        tie(node, data, data);
+    };
+})((typeof module === "undefined") ? window : module.exports);
