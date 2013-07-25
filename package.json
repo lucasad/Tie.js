@@ -1,6 +1,6 @@
 {
     "name": "Tie",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Lucas A. Dohring <lucas@dohring.tk>",
     "description": "A simple templating engine that has no special syntax.",
     "contributors": [
