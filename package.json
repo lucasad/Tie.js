@@ -1,0 +1,24 @@
+{
+    "name": "Tie",
+    "version": "1.0.0",
+    "author": "Lucas A. Dohring <lucas@dohring.tk>",
+    "description": "A simple templating engine that has no special syntax.",
+    "contributors": [
+        {
+            "name": "Lucas A. Dohring",
+            "email": "lucas@dohring.tk"
+        }
+    ],
+    "main": "./index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nykac/Tie.js.git"
+    },
+    "keywords": [
+        "template",
+        "templating",
+        "engine",
+        "semantic"
+    ],
+    "license": "EUPL v1.1"
+}
